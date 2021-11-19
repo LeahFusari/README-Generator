@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const {writeFile} = require('./utils/generateMarkdown.js');
+const createReadMe = require('./utils/generateMarkdown.js');
 
 
 // TODO: Create an array of questions for user input
@@ -9,13 +9,13 @@ const questions = () => {
     return inquirer.prompt([
     {
         type: 'input',
-        name: 'name',
-        message: 'What is your name?'
+        name: 'email',
+        message: 'What is your email?'
     },
     {
         type: 'input',
-        name: 'email',
-        message: 'What is your email?'
+        name: 'githubName',
+        message: 'What is your GitHub name?'
     },
     {
         type: 'input',
@@ -42,7 +42,7 @@ const questions = () => {
     },
     {
         type: 'input',
-        name: 'useage',
+        name: 'usage',
         message: 'How does one use this app?'
     },
     {
@@ -55,21 +55,44 @@ const questions = () => {
         type: 'input',
         name: 'contributors',
         message: 'What are the contribution guidelines?'
-        // not sure what this even means??
+    //     // not sure what this even means??
     }
-    ]);
-    
-};
+    ]) 
+    // .then(function(answers){
+    //     console.log(answers);
+    // });
+}
 
 
-questions()
+
 
 
 // // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+const writeFile = data => {
+    fs.writeFile('README.md', data, err => {
+        // if there is an error 
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Your README has been successfully created!")
+        }
+    })
+}; 
 
 // // TODO: Create a function to initialize app
-// function init() {}
+const init = () => {
+    questions()
+    .then(answers =>{
+        return createReadMe(answers);
+    })
+    .then(data => {
+        return writeFile(data);
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
 
-// // Function call to initialize app
-// init();
+// Function call to initialize app
+init();
