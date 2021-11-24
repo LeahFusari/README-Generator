@@ -28,11 +28,23 @@ const questions = () => {
         message: 'Write a short description of the project.'
     },
     {
+        type: 'confirm',
+        name: 'confirmLicense',
+        message: 'Do you have any Licenses for this project?',
+        default: true
+    },
+    {
         type: 'list',
         name: 'license',
         message: 'Choose which licences your project has.',
-        choices: ['MIT', 'Other1', 'Other2','Other3','Other4']
-        // what other licenses are there?????
+        choices: ['MIT', 'Apache 2.0', 'BSD 3-Clause'],
+        when: ({confirmLicense}) => {
+            if (confirmLicense) {
+              return true;
+            } else {
+              return false;
+            }
+          }
     },
     {
         type: 'input',
