@@ -1,9 +1,9 @@
-# dsagas
+# Professional README Generator
   
 
   
   ## Description 
-  asdg
+  This project was to use node.js to create a README File with a series of prompts in the commandline
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
@@ -13,15 +13,13 @@
   * [Questions](#questions)
   
   ## Installation 
-  asdgfas
+  You will need to install node.js
   ## Usage 
-  asdgf
-
+  Onec Node.js is installed then type node index in the command line and answer the prompts.
   
-
   ## Contributing 
-  asdg
+  none
   ## Tests
-  asdgfa
+  none
   ## Questions
-  If you have any questions about this projects, please contact me directly at safd. You can view more of my projects at https://github.com/dsfga.
+  If you have any questions about this projects, please contact me directly at email@email.com. You can view more of my projects at https://github.com/LeahFusari.

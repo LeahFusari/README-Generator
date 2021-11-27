@@ -35,15 +35,6 @@ function renderLicenseSection(license) {
   
 }
 
-// const renderLicenseSection = license => {
-//   if (!license) {
-//     return '';
-//   }
-//   return `## License 
-//   This project is license under ${license}`
-// };
-
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
@@ -64,9 +55,7 @@ function generateMarkdown(data) {
   ${data.install}
   ## Usage 
   ${data.usage}
-
   ${renderLicenseSection(data.license)}
-
   ## Contributing 
   ${data.contributors}
   ## Tests

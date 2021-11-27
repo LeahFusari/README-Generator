@@ -70,13 +70,8 @@ const questions = () => {
     //     // not sure what this even means??
     }
     ]) 
-    // .then(function(answers){
-    //     console.log(answers);
-    // });
+
 }
-
-
-
 
 
 // // TODO: Create a function to write README file
